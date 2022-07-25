@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100;0,200;0,300;0,400;1,100&family=M+PLUS+1+Code:wght@200&display=swap');
+
+/*Variables*/
+:root{
+    /*Fuente de texto*/
+    --font-one:'Gantari', sans-serif;
+    --font-to: 'M PLUS 1 Code', sans-serif;
+    /*Colors*/
+    --primary:#f4f4f4;
+    --white:rgb(255, 255, 255);
+    --secundary:#101010;
+    --buttons:#4498ff;
+    --input:#fef8ef;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-one);
+}
+
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: var(--primary);
+}
+
+/*Menu Superior*/
+
+nav{
+    text-align: center;
+    padding-top: 20px;
+}
+
+nav ul li{
+    display: inline-block; 
+    padding: 10px 15px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    user-select: none;
+    padding-bottom: 4px;
+    font-size: 13px;
+    color: var(--secundary);
+}
+
+.active,nav ul li a:hover{
+    color: var(--buttons);
+    transition: 0.1s;
+    border-bottom: 2px solid var(--buttons);
+}
+
+/*Content Header Login*/
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: center;
+   margin: 70px 20px;
+}
+
+.text{
+    margin: 20px 70px 0px 0px;
+}
+
+.text p{
+    padding-top: 10px;
+    font-size: 13px;
+    color: var(--secundary);
+    font-weight: 200;
+}
+
+.text h2{
+    font-size: 40px;
+    color: var(--buttons);
+    letter-spacing: 1px;
+    font-weight: 200;
+}
+
+/*Formulario*/
+
+.to input[type="email"],input[type="password"],input[type="text"]{
+    width: 250px;
+    display: block;
+    margin: 20px 0px;
+    padding: 15px 20px;
+    outline: none;
+    border: none;
+    background-color: var(--input);
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.iniciar{
+    width: 250px;
+    display: block;
+    margin: 20px 0px;
+    padding: 15px 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    background-color: var(--buttons);
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--white);
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+.button:hover{
+    opacity: 0.9;
+    transition: 0.3s;
+}
+/*Dark Mode*/
+.mode{
+    background-color: var(--buttons);
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 10px;
+    border: none;
+    padding: 7px 10px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+body.darkmode{
+    background-color: var(--secundary);
+}
+
+p.darkmode{
+    color: var(--white);
+}
+/*Responsive Login*/
+
+@media screen and (max-width: 665px){
+    .text {
+        margin: 20px 20px 0px 0px;
+    }
+    
+}
+
+
+

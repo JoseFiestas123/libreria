@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Prestamos | Admin</title>
+    <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--Hoja de Estilos-->
+    <link rel="stylesheet" href="assents/homes.css">
+    <!--Iconos-->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+    .main{
+        padding-top:150px;
+    }
+
+    main{
+        overflow-y:scroll;
+        max-height:400px;
+    }
+
+    .modal{
+        overflow-y:scroll;
+    }
+   </style>
+   </head>
+<body>
+  <!--Menu Lateral-->
+  <div class="sidebar">
+    <div class="logo-details sidebar-button">
+      <i class='bx bxl-gmail'></i>
+      <span class="logo_name">onfortianos</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="home.php" class="active">
+            <i class='bx bx-home-smile'></i>
+            <span class="links_name">Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a href="libros.php">
+            <i class='bx bx-book-alt'></i>
+            <span class="links_name">Libros</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-run'></i>
+            <span class="links_name">Prestados</span>
+          </a>
+        </li>
+        <li>
+          <a href="admins.php">
+            <i class='bx bxs-user-check'></i>
+            <span class="links_name">Administradores</span>
+          </a>
+        </li>
+       
+        <li class="log_out">
+          <a href="logout.php">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Cerrar Sesión</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+    <!--Texto + NameUser-->
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Libros Prestados</span>
+        
+      </div>
+    </nav>
+
+
+  <!--Tabla-->
+<div class="main">
+    <main>
+        <h2>Libros Prestados</h2>
+        <button type="button" class="button blue mobile" id="cadastrarCliente">Prestar</button>
+          
+          <table class="records">
+              <thead>
+                  <tr>
+                      <th>Id</th>
+                      <th>Fecha</th>
+                      <th>Libro</th>
+                      <th>Codigo</th>
+                      <th>Alumno</th>
+                      <th>Action</th>
+              
+                  </tr>
+              </thead>
+              <tbody>
+            
+              </tbody>
+          </table>
+       
+      </div>
+      <div class="modal" id="modal">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2>Registrar Prestamo</h2>
+                <span class="modal-close" id="modalClose">&#10006;</span>
+            </header>
+            <form  action="" method="post" class="modal-form"> 
+                <input type="date" class="modal-field">
+               <input type="text" placeholder="Buscar Libro" class="modal-field" >
+               <input type="text" placeholder="Codigo"class="modal-field" >
+               <input type="text" placeholder="Alumno" class="modal-field">
+              <input type="submit" class="button green" name="submit" value="Prestar">
+            </footer>
+  
+            </form>
+        </div>
+    </div>
+      </main>
+</div>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bxl-gmail" ,"bxl-gmail");
+}else
+  sidebarBtn.classList.replace("bxl-gmail", "bxl-gmail");
+}
+
+'use strict'
+
+const openModal = () => document.getElementById('modal')
+    .classList.add('active')
+
+const closeModal = () => document.getElementById('modal')
+    .classList.remove('active')
+
+document.getElementById('cadastrarCliente')
+    .addEventListener('click', openModal)
+
+document.getElementById('modalClose')
+    .addEventListener('click', closeModal)
+ </script>
+
+</body>
+</html>
+
